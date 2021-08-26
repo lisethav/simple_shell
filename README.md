@@ -91,9 +91,9 @@ To use this custom _printf function follow the steps below:
 
 ## _Flowchart_ ✨
 ### This is the flowchart of our code shell.
--
 
-[![Untitled-Diagram-1.png](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png)
+
+[![N|Solid](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png)
 
 
 ## License
