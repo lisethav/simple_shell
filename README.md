@@ -93,7 +93,7 @@ To use this custom _printf function follow the steps below:
 ### This is the flowchart of our code shell.
 
 
-[![N|Solid](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png)
+[![Untitled-Diagram-1.png](https://raw.githubusercontent.com/lisethav/simple_shell/master/Untitled%20Diagram.png)](https://github.com/lisethav/simple_shell/blob/master/Untitled%20Diagram.png)
 
 
 ## License
