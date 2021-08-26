@@ -1,1 +1,128 @@
-mmmm
+.\" Manpage for simple_shell.
+.\" Contact luisapinillos20@gmail.com to correct errors or typos.
+.TH man 1 "25 Ago 2021" "1.0" "simple_shell man page"
+
+.SH NAME
+simple_shell\- Command line interpreter
+
+.SH SYNOPSIS
+.B #include "shell.h"
+
+int main(int argc, __attribute__((unused)) char *argv[])
+ ./hsh
+
+.SH DESCRIPTION
+Simple_shell is a command language interpreter that shall execute commands read from a command line string, the standard input.
+.br
+Its function is "translate" the commands, for example, If you write in the terminal and that when pressing "Enter" tells the kernel of the system what to do.
+
+.SH OPERANDS
+
+.B command_file
+- The pathname of a file containing commands.
+.br
+.PP
+.B command_name
+- A string assigned to special parameter 0 when executing the commands in command_string. special parameter 0 shall be set to the value of the first argument passed to sh from its parent (for example, argv[0] for a C program), which is normally a pathname used to execute the sh utility.
+.br 
+.PP
+.B command_string
+- A string that shall be interpreted by the shell as one or more commands.
+.br
+.PP
+
+.SH STDIN, STDOUT, STDERR
+.B Stdin
+- Is the standard input stream. This accepts text as its input.
+.br 
+.PP
+.B Stdout
+- Text output from the command to the shell is delivered via the stdout (standard out) stream.
+.PP
+.B Stderr
+- Error messages from the command are sent through the stderr (standard error) stream.
+
+.SH OPTIONS
+Some options are:
+.br
+.PP
+-(middle dash) - End of options flag. All other arguments are positional parameters.
+.br
+.PP
+.B echo
+- Prints text
+.br
+.PP
+.B touch 
+— Creates a file
+.br
+.PP
+.B man
+- Print manual or get help for a command.
+.br
+.PP
+.B pwd 
+— Print working directory
+.br
+.PP
+.B mv
+— Move or rename directory
+.br 
+
+.SH BUILT-IN COMMANDS
+
+.B  exit
+- Simple_shell process is terminated, and exit from it with zero for success, any other value indicating a failure on the last executed process.
+.PP
+.B  env
+- Prints all the environmental variables of Simple shell.
+.P
+
+.SH ENVIRONMENT VARIABLES
+They are variables that are available system-wide and are inherited by all spawned child processes and shells. These contain information about your login session, stored for the system shell to use when executing commands.
+
+.SH PATH ENVIRONMENT
+It is the system variable. It has specifies directories with the executables commands. If you type ($) echo $PATH, you can see the directories alocated in the variable separated by colon, like this:
+.br
+/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+
+.SH INVOCATION AND EXAMPLE
+The simple_shell run in interactive mode where input is accepted from the keyboard. It also works in a non-interactive mode, the shell is runs from a script or standard input from a echo standard output.
+.br 
+.PP
+To run the shell compile all the .c files in the repo with GNU Comiler Collection and execute the output file, as follow:
+.br
+.B gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+.br
+.PP
+Where hsh would be the file to execute:
+.br
+.B $ ./hsh
+.br
+Simple Shell would be run in interactive mode by executing the hsh. When you execute it, a prompt ($ ) appears waiting for you to type a command followed by an enter. After you press enter, the shell executes the command and a new prompt will appear again expecting a new command. Until you type exit or ctrl D.
+.br 
+.PP
+.B The intercative mode:
+.br
+$ /bin/ls
+.br 
+output:
+.br
+builtins.c comands.c main.c own_function.c shell.h _path.c check_comand.c count_token.c print_prompt.c  tokenizer.c
+.br 
+.PP
+.B The non-interactive mode:
+.br
+$ echo "/bin/ls" | ./hsh
+.br
+output:
+.br
+builtins.c comands.c main.c own_function.c shell.h _path.c check_comand.c count_token.c print_prompt.c  tokenizer.c
+
+.SH RETURN VALUE 
+Return 0 on success, otherwise it will return the exit value.
+
+.SH - AUTHORS
+Luisa Fernanda Pinillos Villa (luisapinillos20@gmail.com)
+.br
+Liseth Arias Valle (lisethav@gmail.com)
