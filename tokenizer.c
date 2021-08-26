@@ -11,6 +11,7 @@ char **token(char *line)
 	char **token = NULL, *tok = NULL;
 	int i = 0;
 	int tokencount;
+	char *delimits = " \t\r\n\a";
 
 	if (line == NULL)
 	{
@@ -24,11 +25,11 @@ char **token(char *line)
 		perror("./hsh");
 		return (NULL);
 	}
-	tok = strtok(line, DELIMITS);
+	tok = strtok(line, delimits);
 	for (i = 0; tok; i++)
 	{
 		token[i] = tok;
-		tok = strtok(NULL, DELIMITS);
+		tok = strtok(NULL, delimits);
 	}
 	token[i] = NULL;
 	return (token);

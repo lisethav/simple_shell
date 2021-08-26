@@ -18,44 +18,6 @@ int envir(void)
 }
 
 /**
- * helper - in process
- * Return: token
- */
-int helper(void)
-{
-	exit(98);
-}
-/**
- * ch_dir - change directory
- * @command: buf whit string
- * Return: always 0
- */
-int ch_dir(char **command)
-{
-	int value = -1;
-	char cwd[PATH_MAX];
-
-	if (command[1] == NULL)
-		value = chdir(_getenv("HOME"));
-	else if (_strcmp(command[1], "-") == 0 || _strcmp(command[1], "--") == 0)
-	{
-		value = chdir(_getenv("OLDPWD"));
-	}
-	if (value == -1)
-	{
-		perror("holi");
-		return (-1);
-	}
-	else if (value != -1)
-	{
-		getcwd(cwd, sizeof(cwd));
-		setenv("OLDPWD", getenv("PWD"), 1);
-		setenv("PWD", cwd, 1);
-	}
-	return (0);
-}
-
-/**
  * signal_line - signal to ctrl + c no exit
  * @signal: signal
  * Return: write

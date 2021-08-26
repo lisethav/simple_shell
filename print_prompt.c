@@ -23,7 +23,7 @@ char *print_prompt(void)
 	if (count_rd == EOF)
 	{
 		free(line);
-		write(STDOUT_FILENO, "\n", count_rd);
+		write(STDOUT_FILENO, "\n", 1);
 		return (NULL);
 	}
 	if (count_rd > 1)

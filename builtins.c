@@ -8,15 +8,12 @@
 
 char *built(char **comm)
 {
-
+	if (comm[0] == NULL)
+	return(0);
 	if (_strcmp(comm[0], "exit") == 0)
 		exit(0);
 	else if (_strcmp(comm[0], "env") == 0)
 		envir();
-	else if (_strcmp(comm[0], "help") == 0)
-		helper();
-	else if (_strcmp(comm[0], "cd") == 0)
-		ch_dir(comm);
 	else
 	{
 		check_comand(comm);

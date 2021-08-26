@@ -1,8 +1,6 @@
 #ifndef _SIMPLE_SHELL_
 #define _SIMPLE_SHELL_
 
-#define DELIMITS "' '\t\r\a"
-
 /*----LIBRARIES----*/
 #include <unistd.h>
 #include <stdio.h>
