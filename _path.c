@@ -19,12 +19,11 @@ int getpath(char **env)
 		var = slash_tok(env, tok);
 		if (stat(var, &_stat) == 0)
 		{
-			*env = strdup(var);
+			*env = _strdup(var);
 			free(var);
 			free(path);
 			return (0);
 		}
-		free(var);
 		tok = strtok(NULL, ":");
 	}
 	free(var);
